@@ -1,0 +1,20 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+.idea/
+.vs/
+*.user
+
+# Configuracao local com segredos (use User Secrets)
+**/appsettings.Development.json
+**/appsettings.Local.json
+.env
+
+# Logs, resultados de testes e cobertura
+logs/
+TestResults/
+coverage/
+*.coverage
+coverage.cobertura.xml
