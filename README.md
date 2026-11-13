@@ -17,17 +17,25 @@ React Native que consome a API Java e usa o **mesmo banco Oracle** e o **mesmo l
 | **Valor entregue por esta API** | Status e prioridade gerenciados pelo gestor, com histórico; o morador acompanha cada etapa e lê os recados do gestor; o gestor decide pelo que tem mais apoio e mede o tempo de resolução |
 | **ODS** | 11 (cidades sustentáveis), 9 (infraestrutura), 10 (redução das desigualdades) |
 
+| 🌐 | |
+|---|---|
+| **API no ar (Swagger)** | https://rootfix-api-dotnet.onrender.com |
+| **Health check** | https://rootfix-api-dotnet.onrender.com/health |
+| **Login (API Java)** | https://rootfix-java.onrender.com/swagger-ui.html → `POST /auth/login` |
+
+> Plano gratuito do Render: depois de 15 min sem uso a API dorme e o primeiro acesso leva alguns segundos.
+
 ---
 
 ## 👥 Integrantes
 
 | Nome | RM | Responsabilidade |
 |---|---|---|
-| Ryan Vetoriano | _preencher_ | **.NET (este repositório)** |
-| João Caetano | _preencher_ | Java e DevOps |
-| João Bueno | _preencher_ | IA e QA |
-| Felipe Furlanetto | _preencher_ | Mobile |
-| Raul Rezende | _preencher_ | Banco de Dados |
+| Ryan Vetoriano | RM565667 | **.NET (este repositório)** |
+| João Caetano | RM562074 | Java e DevOps |
+| João Bueno | RM564115 | IA e QA |
+| Felipe Furlanetto | RM562766 | Mobile |
+| Raul Rezende | RM564002 | Banco de Dados |
 
 ---
 
@@ -353,8 +361,8 @@ cobre um único serviço ligado o mês todo; no mesmo workspace do Java, os dois
 O Render informa a porta pela variável `PORT`, que a API já usa.
 
 5. Depois do primeiro deploy, confira:
-   - `https://<serviço>.onrender.com/health` → `oracle` e `api-java` *Healthy* (ou `api-java` *Degraded* se o Java estiver dormindo);
-   - `https://<serviço>.onrender.com/` → Swagger;
+   - `https://rootfix-api-dotnet.onrender.com/health` → `oracle` e `api-java` *Healthy* (ou `api-java` *Degraded* se o Java estiver dormindo);
+   - `https://rootfix-api-dotnet.onrender.com/` → Swagger;
    - login no Java com `gestor@rootfix.com` e `GET /painel/comunidades` com o token (ver [Autenticação](#-autenticação-jwt-da-api-java)).
 6. Passe a URL para o Felipe (app) e coloque-a em [Links](#-links).
 
@@ -469,5 +477,7 @@ _preencher: ferramentas usadas e para quê, conforme a regra da Global Solution.
 ## 🔗 Links
 
 - Repositório: https://github.com/ryanvetoriano/RootFix
-- API no ar: _preencher após o deploy_ (`https://<serviço>.onrender.com`)
+- API no ar: https://rootfix-api-dotnet.onrender.com (Swagger na raiz)
+- Health check: https://rootfix-api-dotnet.onrender.com/health
+- API Java (login e token): https://rootfix-java.onrender.com
 - Vídeo: _se houver_
