@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+**/TestResults/
+**/.vs/
+**/.idea/
+**/*.user
+**/appsettings.Development.json
+**/appsettings.Local.json
+.git/
+docs/

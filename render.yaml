@@ -1,0 +1,37 @@
+# Blueprint do Render para a API .NET do RootFix (painel do gestor).
+#
+# No Render: New -> Blueprint -> escolher este repositório. O Render lê este arquivo, cria o
+# Web Service e pede os valores das variáveis marcadas com "sync: false" (os segredos), que
+# NUNCA ficam no repositório.
+#
+# Use um workspace DIFERENTE do da API Java: cada workspace gratuito tem 750 h/mês, o que cobre
+# um único serviço ligado o mês inteiro.
+
+services:
+  - type: web
+    name: rootfix-api-dotnet
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health/live
+    autoDeploy: true
+    envVars:
+      # Oracle da FIAP (usuário do Raul), o mesmo banco da API Java.
+      # Ex.: User Id=RMxxxxx;Password=...;Data Source=oracle.fiap.com.br:1521/ORCL
+      - key: ConnectionStrings__OracleConnection
+        sync: false
+
+      # Exatamente o mesmo valor configurado no serviço da API Java.
+      - key: JWT_SECRET
+        sync: false
+
+      # Mesmo emissor da API Java (padrão dela).
+      - key: JWT_ISSUER
+        value: rootfix-api
+
+      # A mesma URL amqps:// do CloudAMQP configurada no serviço da API Java.
+      - key: RABBITMQ_URL
+        sync: false
